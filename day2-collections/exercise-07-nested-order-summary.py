@@ -1,3 +1,9 @@
+"""
+Exercise: Nested Order Summary
+Student: Bishal Khadka
+Day: 2
+"""
+
 # Given:
 
 orders = {

@@ -1,4 +1,8 @@
-
+"""
+Exercise: Clean Numeric Values
+Student: Bishal Khadka
+Day: 2
+"""
 # Given values
 raw_values = [100, None, 250, "invalid", 300, None, 450]
 

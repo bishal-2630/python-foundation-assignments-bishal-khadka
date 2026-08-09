@@ -1,3 +1,8 @@
+"""
+Exercise: Sales List Analysis
+Student: Bishal Khadka
+Day: 2
+"""
 # Given
 monthly_sales = [85000, 120000, 95000, 140000, 75000, 160000]
 

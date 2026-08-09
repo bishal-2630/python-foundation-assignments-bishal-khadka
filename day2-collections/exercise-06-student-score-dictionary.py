@@ -1,3 +1,8 @@
+"""
+Exercise: Student Score Dictionary
+Student: Bishal Khadka
+Day: 2
+"""
 
 student_scores = {
     "Anisha": 78,
