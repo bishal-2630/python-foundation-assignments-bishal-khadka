@@ -1,0 +1,5 @@
+Row 2: valid order processed, total=90.0
+Row 3: invalid qty or price - could not convert string to float: 'not_a_number'
+Row 4: negative qty or price
+Row 5: valid order processed, total=22.5
+Processing complete. Valid orders: 2, Invalid orders: 2
