@@ -16,3 +16,4 @@ This repository contains my assignments and practice exercises from the Python F
 - [✓] Day 2: Collections
 - [✓] Day 3: Functions and Modules
 - [✓] Day 4: File and error handling,logging
+- [✓] Day 4: Data Analysis, Cleaning and API Integration
