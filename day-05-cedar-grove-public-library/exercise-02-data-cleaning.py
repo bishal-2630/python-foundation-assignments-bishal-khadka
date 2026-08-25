@@ -6,7 +6,7 @@ Day: 7
 
 import pandas as pd
 
-checkouts_df = pd.read_csv('day-07-cedar-grove-public-library/checkouts.csv', parse_dates=['checkout_date', 'due_date', 'return_date'])
+checkouts_df = pd.read_csv('day-05-cedar-grove-public-library/checkouts.csv', parse_dates=['checkout_date', 'due_date', 'return_date'])
 
 checkouts_clean = checkouts_df.copy()
 

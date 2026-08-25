@@ -7,7 +7,7 @@ Day: 7
 import pandas as pd 
 
 # Load the checkout data from the CSV file
-checkout_df = pd.read_csv('day-07-cedar-grove-public-library/checkouts.csv' ,parse_dates = ['checkout_date', 'due_date', 'return_date']) 
+checkout_df = pd.read_csv('day-05-cedar-grove-public-library/checkouts.csv' ,parse_dates = ['checkout_date', 'due_date', 'return_date']) 
 
 n_total_checkouts = len(checkout_df)
 

@@ -1,5 +1,5 @@
 """
-Exercise: Late Fee By Author
+Exercise: Real Public API
 Student: Bishal Khadka
 Day: 7
 """
@@ -7,8 +7,7 @@ Day: 7
 import pandas as pd
 import requests
 
-
-checkouts_df = pd.read_csv('day-07-cedar-grove-public-library/checkouts.csv', parse_dates=['checkout_date', 'due_date', 'return_date'])
+checkouts_df = pd.read_csv('day-05-cedar-grove-public-library/checkouts.csv', parse_dates=['checkout_date', 'due_date', 'return_date'])
 checkouts_clean = checkouts_df.copy()
 checkouts_clean["is_returned"] = checkouts_clean["return_date"].notnull()
 checkouts_clean["late_fee"] = checkouts_clean["late_fee"].fillna(0)
@@ -28,9 +27,7 @@ BACKUP_BOOK_FACTS = {
     "Crime and Punishment": {"author": "Fyodor Dostoevsky", "first_publish_year": 1866},
 }
 
-#uses open library API
 OPEN_LIBRARY_API = "https://openlibrary.org/search.json"
-
 
 def get_book_facts(title):
     try:
@@ -50,19 +47,24 @@ records = {}
 for title in checkouts_clean["book_title"].unique():
     records[title] = get_book_facts(title)
 
-book_facts_df = pd.DataFrame(records).T 
+book_facts_df = pd.DataFrame(records).T
 
-facts_reset = book_facts_df.reset_index().rename(columns={"index": "book_title"})
-checkouts_with_author = checkouts_clean.merge(facts_reset, on="book_title", how="left")
+# 4. Check yourself
+assert len(book_facts_df) == checkouts_clean["book_title"].nunique()
+assert set(["author", "first_publish_year"]).issubset(book_facts_df.columns)
+print("Looks good:", book_facts_df.shape)
+print("\nFirst 5 rows of book facts:")
+print(book_facts_df.head())
 
-late_fee_by_author = checkouts_with_author.groupby("author")["late_fee"].sum().sort_values(ascending=False)
-
-# Check yourself
-assert len(checkouts_with_author) == len(checkouts_clean)
-assert late_fee_by_author.is_monotonic_decreasing
-print("Looks good -- costliest author:", late_fee_by_author.idxmax())
-
+#Output:
 '''
-Output:
-Looks good -- costliest author: Aldous Huxley
+Looks good: (12, 2)
+
+First 5 rows of book facts:
+                            author                  first_publish_year
+The Great Gatsby        F. Scott Fitzgerald               1920
+Jane Eyre                 Charlotte Brontë               1847
+The Catcher in the Rye       J. D. Salinger               1945
+The Hobbit                   J.R.R. Tolkien               1937
+Crime and Punishment      Фёдор Достоевский               1866
 '''
