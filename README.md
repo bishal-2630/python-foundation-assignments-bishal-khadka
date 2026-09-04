@@ -18,3 +18,4 @@ This repository contains my assignments and practice exercises from the Python F
 - [✓] Day 4: File and error handling,logging
 - [✓] Day 5: Data Analysis, Cleaning and API Integration
 - [✓] Day 6: SQL Assignments
+- [✓] Day 7: SQL Work
