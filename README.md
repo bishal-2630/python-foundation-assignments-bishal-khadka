@@ -20,3 +20,4 @@ This repository contains my assignments and practice exercises from the Python F
 - [✓] Day 6: SQL Assignments
 - [✓] Day 7: SQL Work
 - [✓] Day 8: ETL Banking Pipeline
+- [✓] Day 9:Spark assignments
